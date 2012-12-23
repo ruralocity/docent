@@ -1,0 +1,21 @@
+<h1>Listing links</h1>
+
+<table>
+  <tr>
+    <th>controller#action</th>
+    <th>URL</th>
+    <th></th>
+  </tr>
+
+<% @links.each do |link| %>
+  <tr id="link_<%= link.id %>">
+    <td><%= link_to link.shortcut, edit_link_path(link) %></td>
+    <td><%= link.url %></td>
+    <td><%= link_to 'Delete', link, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Link', new_link_path %>
