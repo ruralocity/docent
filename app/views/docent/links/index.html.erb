@@ -1,4 +1,6 @@
-<h1>Listing links</h1>
+<h1>Links</h1>
+
+<%= link_to 'New Link', new_link_path, class: 'button' %>
 
 <table>
   <tr>
@@ -8,14 +10,11 @@
   </tr>
 
 <% @links.each do |link| %>
-  <tr id="link_<%= link.id %>">
+  <tr id="link_<%= link.id %>" class="<%= cycle('odd','even') %>">
     <td><%= link_to link.shortcut, edit_link_path(link) %></td>
-    <td><%= link.url %></td>
-    <td><%= link_to 'Delete', link, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to link.url, link.url %></td>
+    <td><%= link_to 'Delete', link, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button' %></td>
   </tr>
 <% end %>
 </table>
 
-<br />
-
-<%= link_to 'New Link', new_link_path %>
