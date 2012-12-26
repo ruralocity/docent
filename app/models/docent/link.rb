@@ -14,7 +14,7 @@ module Docent
       elsif link = self.where(controller: controller).first
         link.url
       else
-        Docent::DEFAULT_LINK
+        Docent.default_link
       end
     end
   end

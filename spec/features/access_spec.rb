@@ -36,11 +36,13 @@ describe "user accessing help" do
 
   context "a page with no help defined" do
     it "redirects to the main support link for the whole site", js: true do
+      Docent.default_link = 'http://defaulttestlink.com/docs'
+
       visit posts_path
 
       click_link 'Help'
 
-      current_url.should eq Docent::DEFAULT_LINK
+      current_url.should eq Docent.default_link
     end
   end
 end
