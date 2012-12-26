@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.description = "Docent is a mountable Rails engine to provide your app's users with links to proper support documentation."
   s.license     = "MIT"
 
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.markdown"]
 
   s.add_dependency "rails", "~> 3.2"
 
