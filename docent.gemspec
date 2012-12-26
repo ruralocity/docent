@@ -7,21 +7,22 @@ require "docent/version"
 Gem::Specification.new do |s|
   s.name        = "docent"
   s.version     = Docent::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of Docent."
-  s.description = "TODO: Description of Docent."
+  s.authors     = ["Aaron Sumner"]
+  s.email       = ["asumner@mac.com"]
+  s.homepage    = "https://github.com/ruralocity/docent"
+  s.summary     = "Contextually-aware links to externally-hosted support docs."
+  s.description = "Docent is a mountable Rails engine to provide your app's users with links to proper support documentation."
+  s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
 
-  s.add_dependency "rails", "~> 3.2.9"
+  s.add_dependency "rails", "~> 3.2"
 
   s.add_development_dependency "sqlite3"
 
   s.add_development_dependency "sqlite3"
-  s.add_development_dependency "rspec-rails"
-  s.add_development_dependency "capybara"
-  s.add_development_dependency "factory_girl_rails"
+  s.add_development_dependency "rspec-rails", '~> 2.12.0'
+  s.add_development_dependency "capybara", '~> 2.0.1'
+  s.add_development_dependency "factory_girl_rails", '~> 4.1.0'
   s.add_development_dependency "database_cleaner"
 end
