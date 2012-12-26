@@ -51,7 +51,7 @@ Docent is a proof-of-concept, based on something I baked into a Rails 2-point-so
 
 I'd love to see your ideas and improvements. Fork the project on GitHub, make your changes (with specs!), and submit a pull request. **A note on specs:** I used Capybara feature specs to build Docent; the specs related to end-user access to links currently relies on a non-Rack::Test driver due to the need to check for redirection to an external site. I stuck with Selenium to minimize dependencies, at the expense of speed.
 
-StatBoard is released under the [MIT License][mit]. See MIT-LICENSE for further details.
+Docent is released under the [MIT License][mit]. See MIT-LICENSE for further details.
 
 [mit]: http://www.opensource.org/licenses/MIT
 
