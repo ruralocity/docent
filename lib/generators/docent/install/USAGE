@@ -1,0 +1,5 @@
+Description:
+    Create Docent initializer and copy Docent-related migrations
+
+Example:
+    rails generate docent:install

@@ -6,26 +6,23 @@ Docent is a proof-of-concept, based on something I baked into a Rails 2-point-so
 
 ## Setup
 
-1. Add Docent to your Gemfile and install with Bundler.
+1. Add Docent to your Gemfile and install with Bundler:
 
-2. Mount the engine in your application:
+        gem 'docent'
 
-        mount Docent::Engine => "/docent"
+2. Run the Docent generator to mount the app in your routes file, generate an initializer, and copy Docent's migrations to your application:
 
-3. Add the Docent-specific tables to your database:
+        rails generate docent:install
 
-        rake docent:install:migrations
+3. Run database migrations to add Docent-related data to your database:
+
         rake db:migrate
 
-4. Create an initializer in `config/initializers/docent.rb`. This establishes a default link (top level of your knowledge base, support form, whatever) for views without support documents in Docent; it also provides a username and password for authentication via HTTP Basic:
-
-        Docent.default_link = 'http://yourhelpsite.com/docs'
-        Docent.username = 'docent_admin'
-        Docent.password = 'secret'
+4. Edit `config/initializers/docent.rb` to establish a default link (top level of your knowledge base, support form, whatever) for views without support documents in Docent; and to provide a username and password for authentication via HTTP Basic.
 
 ## Usage
 
-1. Load Docent's admin panel at `http://yourapp.com/docent`
+1. Load Docent's admin panel at `http://yourapp.com/docent` and sign in with the credentials you assigned in the initializer.
 
 2. Enter links to support documents. You can enter links specific to a controller#action combination, as well as catch-all links to controllers. Docent looks for links in the following order:
 
@@ -43,7 +40,6 @@ Docent is a proof-of-concept, based on something I baked into a Rails 2-point-so
 
 ## To Do
 
-- add a generator to do most of the setup automatically
 - replace HTTP basic authentication with something integrated with the host application
 - add support for self-hosted documents (I'd link to be able to post documents directly from ScreenSteps into Docent via XMLRPC, for example).
 
