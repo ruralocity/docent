@@ -3,12 +3,7 @@ module Docent
     source_root File.expand_path('../templates', __FILE__)
 
     def mount_engine_in_routes_file
-      inject_into_file "config/routes.rb", after: "Rails.application.routes.draw do\n" do <<-'ROUTE'
-
-  mount Docent::Engine => "/docent"
-
-      ROUTE
-      end
+      route 'mount Docent::Engine => "/docent"'
     end
 
     def generate_initializer
