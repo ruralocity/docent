@@ -7,12 +7,13 @@ module Docent
     end
 
     def self.link_for(controller=nil, action=nil)
-      if link = self.where(controller: controller).
-                where(action: action).
-                first
-        link.url
-      elsif link = self.where(controller: controller).first
-        link.url
+      if (links = self.where(controller: controller).
+                  where(self.arel_table[:action].eq(action)).
+                  where(self.arel_table[:action].not_eq(''))).length > 0
+        links.first.url
+      elsif (links = self.where(controller: controller).
+                     where(self.arel_table[:action].eq(''))).length > 0
+        links.first.url
       else
         Docent.default_link
       end

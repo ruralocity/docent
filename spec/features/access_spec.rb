@@ -24,7 +24,7 @@ describe "user accessing help" do
       post = Post.create
       FactoryGirl.create(:docent_link,
         controller: 'posts',
-        action: nil,
+        action: '',
         url: 'http://supportsite.com/docs/552')
       visit "/posts/#{post.id}"
 
